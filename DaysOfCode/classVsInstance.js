@@ -1,27 +1,27 @@
-'use strict';
+/* eslint-disable prefer-const */
+/* eslint-disable radix */
+
+let inputStdin = '';
+let inputStdinArray = '';
+let inputCurrentline = 0;
 
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
-
-var input_stdin = "";
-var input_stdin_array = "";
-var input_currentline = 0;
-
-process.stdin.on('data', function(data) {
-    input_stdin += data;
+process.stdin.on('data', (data) => {
+    inputStdin += data;
 });
 
-process.stdin.on('end', function() {
-    input_stdin_array = input_stdin.split("\n");
+process.stdin.on('end', () => {
+    inputStdinArray = inputStdin.split('\n');
     main();
 });
 
 function readLine() {
-    return input_stdin_array[input_currentline++];
+    return inputStdinArray[inputCurrentline += 1];
 }
 
 function Person(initialAge) {
-    var age = 0;
+    let age = 0;
     // Add some more code to run some checks on initialAge
     if (initialAge < 0) {
         console.log('Age is not valid, setting age to 0.');
@@ -29,35 +29,32 @@ function Person(initialAge) {
     } else {
         age = initialAge;
     }
-    this.amIOld = function() {
+    this.amIOld = () => {
         // Do some computations in here and print out the correct statement to the console
         if (age < 13) {
             return console.log('You are young.');
-        } else if (age >= 13 && age < 18) {
-            return console.log('You are a teenager.');
-        } else {
-            return console.log('You are old.');
         }
-
+        if (age >= 13 && age < 18) {
+            return console.log('You are a teenager.');
+        }
+        return console.log('You are old.');
     };
-    this.yearPasses = function() {
+    this.yearPasses = () => {
         // Increment the age of the person in here
-        age++;
+        age += 1;
     };
 }
 
 function main() {
-
-    var T = parseInt(readLine());
-    for (i = 0; i < T; i++) {
-        var age = parseInt(readLine());
-        var p = new Person(age);
+    let T = parseInt(readLine());
+    for (let i = 0; i < T; i += 1) {
+        let age = parseInt(readLine());
+        const p = new Person(age);
         p.amIOld();
-        for (j = 0; j < 3; j++) {
+        for (let j = 0; j < 3; j += 1) {
             p.yearPasses();
-
         }
         p.amIOld();
-        console.log("");
+        console.log('');
     }
 }
