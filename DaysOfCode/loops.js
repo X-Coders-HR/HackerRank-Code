@@ -5,32 +5,30 @@ let inputString = '';
 let currentLine = 0;
 
 process.stdin.on('data', (inputStdin) => {
-    inputString += inputStdin;
+  inputString += inputStdin;
 });
 
 process.stdin.on('end', () => {
-    inputString = inputString.replace(/\s*$/, '')
-        .split('\n')
-        .map((str) => str.replace(/\s*$/, ''));
+  inputString = inputString.replace(/\s*$/, '')
+    .split('\n')
+    .map((str) => str.replace(/\s*$/, ''));
 
-    main();
+  main();
 });
 
 function readLine() {
-    return inputString[currentLine += 1];
+  return inputString[currentLine += 1];
 }
 
 function main() {
-    const n = parseInt(readLine(), 10);
-    let result = '';
+  const n = parseInt(readLine(), 10);
+  const result = [];
 
-    for (let i = 1; i <= 10; i += 1) {
-        if (i < 10) {
-            result += `${n} x ${i} = ${n * i}\n`;
-        } else {
-            result += `${n} x ${i} = ${n * i}`;
-        }
-    }
+  for (let i = 1; i <= 10; i += 1) {
+    result[i] = `${n} x ${i} = ${n * i}`;
+  }
 
-    console.log(result);
+  for (let r = 1; r < result.length; r += 1) {
+    console.log(result[r]);
+  }
 }

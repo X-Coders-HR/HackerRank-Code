@@ -8,41 +8,36 @@ let inputStdinArray = '';
 let inputCurrentline = 0;
 
 process.stdin.on('data', (data) => {
-    inputStdin += data;
+  inputStdin += data;
 });
 
 process.stdin.on('end', () => {
-    inputStdinArray = inputStdin.split('\n');
-    main();
+  inputStdinArray = inputStdin.split('\n');
+  main();
 });
 
 // Reads complete line from STDIN
 function readLine() {
-    return inputStdinArray[inputCurrentline += 1];
+  return inputStdinArray[inputCurrentline += 1];
 }
 
 function main() {
-    const i = 4;
-    const d = 4.0;
-    const s = 'HackerRank';
+  const firtsValue = 4;
+  const secValue = 4.0;
+  const thirdValue = 'HackerRank ';
 
-    // Declare second integer, double, and String variables.
-    let secI;
-    let secD;
-    let secS;
+  // Read and save an integer, double, and String to your variables.
+  const firtsReadLine = parseInt(readLine());
+  const secReadLine = parseFloat(readLine());
+  const thirdReadLine = readLine();
 
-    // Read and save an integer, double, and String to your variables.
-    secI = parseInt(readLine());
-    secD = parseFloat(readLine());
-    secS = readLine();
+  // Print the sum of both integer variables on a new line.
+  console.log(firtsReadLine + firtsValue);
 
-    // Print the sum of both integer variables on a new line.
-    console.log(secI + i);
+  // Print the sum of the double variables on a new line.
+  console.log((secReadLine + secValue).toFixed(1));
 
-    // Print the sum of the double variables on a new line.
-    console.log((secD + d).toFixed(1));
-
-    // Concatenate and print the String variables on a new line
-    // The 's' variable above should be printed first.
-    console.log(s + secS);
+  // Concatenate and print the String variables on a new line
+  // The 's' variable above should be printed first.
+  console.log(thirdValue + thirdReadLine);
 }
