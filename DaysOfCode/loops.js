@@ -24,11 +24,9 @@ function main() {
   const n = parseInt(readLine(), 10);
   const result = [];
 
-  for (let i = 1; i <= 10; i += 1) {
-    result[i] = `${n} x ${i} = ${n * i}`;
+  for (let i = 0; i < 10; i += 1) {
+    result[i] = `${n} x ${i+1} = ${n * (i+1)}`;
   }
 
-  for (let r = 1; r < result.length; r += 1) {
-    console.log(result[r]);
-  }
+  console.log(result.join(' \n'));
 }
