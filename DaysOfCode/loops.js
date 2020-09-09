@@ -1,3 +1,4 @@
+/* eslint-disable prefer-spread */
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -22,11 +23,7 @@ function readLine() {
 
 function main() {
   const n = parseInt(readLine(), 10);
-  const result = [];
 
-  for (let i = 0; i < 10; i += 1) {
-    result[i] = `${n} x ${i+1} = ${n * (i+1)}`;
-  }
-
-  console.log(result.join(' \n'));
+  console.log(((Array.apply(null, Array(10)))
+    .map((_x, i) => `${n} x ${i + 1} = ${n * (i + 1)}`)).join(' \n'));
 }
