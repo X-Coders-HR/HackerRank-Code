@@ -18,7 +18,7 @@ process.stdin.on('end', () => {
 
 // Reads complete line from STDIN
 function readLine() {
-  return inputStdinArray[inputCurrentline += 1];
+  return inputStdinArray[inputCurrentline++];
 }
 
 function main() {
@@ -26,6 +26,7 @@ function main() {
   const secValue = 4.0;
   const thirdValue = 'HackerRank ';
 
+  //STEV-CODE
   // Read and save an integer, double, and String to your variables.
   const firtsReadLine = parseInt(readLine());
   const secReadLine = parseFloat(readLine());
@@ -39,5 +40,6 @@ function main() {
 
   // Concatenate and print the String variables on a new line
   // The 's' variable above should be printed first.
-  console.log(thirdValue + thirdReadLine);
+  console.log(`${thirdValue}${thirdReadLine}`);
+  //END STEV-CODE
 }

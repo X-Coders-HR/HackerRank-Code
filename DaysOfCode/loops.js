@@ -18,12 +18,14 @@ process.stdin.on('end', () => {
 });
 
 function readLine() {
-  return inputString[currentLine += 1];
+  return inputString[currentLine++];
 }
 
 function main() {
   const n = parseInt(readLine(), 10);
 
+  //STEV-CODE
   console.log(((Array.apply(null, Array(10)))
     .map((_x, i) => `${n} x ${i + 1} = ${n * (i + 1)}`)).join(' \n'));
+  //END STEV-CODE
 }

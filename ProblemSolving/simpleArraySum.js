@@ -17,19 +17,15 @@ process.stdin.on('end', () => {
 });
 
 function readLine() {
-  return inputString[currentLine += 1];
+  return inputString[currentLine++];
 }
 
+//STEV-CODE
 /* Complete the simpleArraySum function below. */
 function simpleArraySum(ar) {
-  let result = 0;
-
-  for (let i = 0; i < ar.length; i += 1) {
-    result += ar[i];
-  }
-
-  return result;
+  return ar.reduce((a, b) => a + b, 0);
 }
+//END STEV-CODE
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);

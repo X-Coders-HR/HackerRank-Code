@@ -17,34 +17,28 @@ process.stdin.on('end', () => {
 });
 
 function readLine() {
-  return inputStdinArray[inputCurrentline += 1];
+  return inputStdinArray[inputCurrentline++];
 }
 
+// STEV-CODE
 function Person(initialAge) {
-  const age = 0;
-
-  function setAge(newAge) {
-    this.age = newAge;
-  }
-  function getAge() {
-    return this.age;
-  }
+  const age = (newAge) => this.age = newAge;
 
   // Add some more code to run some checks on initialAge
   if (initialAge < 0) {
     console.log('Age is not valid, setting age to 0.');
-    setAge(0);
+    age(0);
   } else {
-    setAge(initialAge);
+    age(initialAge);
   }
 
   this.amIOld = () => {
   // Do some computations in here and print out the correct statement to the console
-    if (getAge() < 13) {
+    if (this.age < 13) {
       console.log('You are young.');
       return;
     }
-    if (getAge() >= 13 && getAge() < 18) {
+    if (this.age >= 13 && this.age < 18) {
       console.log('You are a teenager.');
       return;
     }
@@ -52,17 +46,18 @@ function Person(initialAge) {
   };
   this.yearPasses = () => {
   // Increment the age of the person in here
-    setAge(getAge() + 1);
+    age(this.age + 1);
   };
 }
+// END STEV-CODE
 
 function main() {
   let T = parseInt(readLine());
-  for (let i = 0; i < T; i += 1) {
+  for (let i = 0; i < T; i++) {
     let age = parseInt(readLine());
     const p = new Person(age);
     p.amIOld();
-    for (let j = 0; j < 3; j += 1) {
+    for (let j = 0; j < 3; j++) {
       p.yearPasses();
     }
     p.amIOld();

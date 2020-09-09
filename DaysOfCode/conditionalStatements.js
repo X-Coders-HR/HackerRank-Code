@@ -16,22 +16,29 @@ process.stdin.on('end', () => {
 });
 
 function readLine() {
-  return inputString[currentLine += 1];
+  return inputString[currentLine++];
 }
 
 function main() {
   const N = parseInt(readLine(), 10);
 
+  //STEV-CODE
   /* El operador restante (%) devuelve el resto que queda
     cuando un operando se divide por un segundo operando. */
 
   if (N >= 2 && N <= 5 && N % 2 === 0) {
     console.log('Not Weird');
-  } else if (N >= 6 && N <= 20 && N % 2 === 0) {
-    console.log('Weird');
-  } else if (N > 20 && N % 2 === 0) {
-    console.log('Not Weird');
-  } else {
-    console.log('Weird');
+    return;
   }
+  if (N >= 6 && N <= 20 && N % 2 === 0) {
+    console.log('Weird');
+    return;
+  }
+  if (N > 20 && N % 2 === 0) {
+    console.log('Not Weird');
+    return;
+  }
+
+  console.log('Weird');
+  //END STEV-CODE
 }

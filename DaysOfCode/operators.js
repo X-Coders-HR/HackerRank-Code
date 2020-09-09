@@ -19,17 +19,20 @@ process.stdin.on('end', () => {
 });
 
 function readLine() {
-  return inputString[currentLine += 1];
+  return inputString[currentLine++];
 }
 
 // Complete the solve function below.
 function solve(meal_cost, tip_percent, tax_percent) {
-  let meal = parseFloat(meal_cost).toFixed(2);
-  let totTip = (meal * (parseFloat(tip_percent) / 100)).toFixed(2);
-  let totTax = (meal * (parseFloat(tax_percent) / 100)).toFixed(2);
-  let resul = Math.round(parseFloat(meal) + parseFloat(totTip) + parseFloat(totTax));
+  //STEV-CODE
+  const porc = (tot, proc) => (tot.toFixed(2)) * (proc.toFixed(2)) / 100;
 
-  return console.log(resul);
+  const totTip = (porc(meal_cost, tip_percent));
+  const totTax = (porc(meal_cost, tax_percent));
+  const resul = Math.round(meal_cost + totTip + totTax);
+
+  console.log(resul);
+  //END STEV-CODE
 }
 
 function main() {
