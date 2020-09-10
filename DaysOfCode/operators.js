@@ -1,3 +1,5 @@
+/* eslint-disable no-mixed-operators */
+/* eslint-disable no-plusplus */
 /* eslint-disable camelcase */
 /* eslint-disable prefer-const */
 process.stdin.resume();
@@ -24,7 +26,7 @@ function readLine() {
 
 // Complete the solve function below.
 function solve(meal_cost, tip_percent, tax_percent) {
-  //STEV-CODE
+  // STEV-CODE
   const porc = (tot, proc) => (tot.toFixed(2)) * (proc.toFixed(2)) / 100;
 
   const totTip = (porc(meal_cost, tip_percent));
@@ -32,7 +34,7 @@ function solve(meal_cost, tip_percent, tax_percent) {
   const resul = Math.round(meal_cost + totTip + totTax);
 
   console.log(resul);
-  //END STEV-CODE
+  // END STEV-CODE
 }
 
 function main() {

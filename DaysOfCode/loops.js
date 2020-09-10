@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable prefer-spread */
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -24,8 +25,8 @@ function readLine() {
 function main() {
   const n = parseInt(readLine(), 10);
 
-  //STEV-CODE
+  // STEV-CODE
   console.log(((Array.apply(null, Array(10)))
     .map((_x, i) => `${n} x ${i + 1} = ${n * (i + 1)}`)).join(' \n'));
-  //END STEV-CODE
+  // END STEV-CODE
 }

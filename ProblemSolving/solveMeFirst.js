@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable no-plusplus */
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
 
@@ -18,9 +21,9 @@ function readLine() {
   return inputStdinArray[inputCurrentline++];
 }
 
-//END STEV-CODE
+// END STEV-CODE
 function solveMeFirst(a, b) {
   // Hint: Type return a+b below
   return a + b;
 }
-//END STEV-CODE
+// END STEV-CODE

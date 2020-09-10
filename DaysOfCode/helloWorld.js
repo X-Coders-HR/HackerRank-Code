@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 function processData(inputString) {
-  //STEV-CODE
+  // STEV-CODE
   // This line of code prints the first line of output
   console.log('Hello, World.');
 
   // Write the second line of output that prints the contents of 'inputString' here.
   const secLine = inputString;
   console.log(secLine);
-  //END STEV-CODE
+  // END STEV-CODE
 }
 
 process.stdin.resume();
