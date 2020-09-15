@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
-/* eslint-disable prefer-spread */
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -10,7 +10,7 @@ process.stdin.on('data', (inputStdin) => {
   inputString += inputStdin;
 });
 
-process.stdin.on('end', () => {
+process.stdin.on('end', (_) => {
   inputString = inputString.replace(/\s*$/, '')
     .split('\n')
     .map((str) => str.replace(/\s*$/, ''));
@@ -25,8 +25,7 @@ function readLine() {
 function main() {
   const n = parseInt(readLine(), 10);
 
-  // STEV-CODE
-  console.log(((Array.apply(null, Array(10)))
-    .map((_x, i) => `${n} x ${i + 1} = ${n * (i + 1)}`)).join(' \n'));
-  // END STEV-CODE
+  const arr = readLine().split(' ').map((arrTemp) => parseInt(arrTemp, 10));
+
+  console.log((arr.reverse()).join(' '));
 }

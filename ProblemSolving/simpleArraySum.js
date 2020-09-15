@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable prefer-const */
 const fs = require('fs');
 
@@ -20,12 +21,12 @@ function readLine() {
   return inputString[currentLine++];
 }
 
-//STEV-CODE
+// STEV-CODE
 /* Complete the simpleArraySum function below. */
 function simpleArraySum(ar) {
   return ar.reduce((a, b) => a + b, 0);
 }
-//END STEV-CODE
+// END STEV-CODE
 
 function main() {
   const ws = fs.createWriteStream(process.env.OUTPUT_PATH);

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -22,7 +23,7 @@ function readLine() {
 function main() {
   const N = parseInt(readLine(), 10);
 
-  //STEV-CODE
+  // STEV-CODE
   /* El operador restante (%) devuelve el resto que queda
     cuando un operando se divide por un segundo operando. */
 
@@ -40,5 +41,5 @@ function main() {
   }
 
   console.log('Weird');
-  //END STEV-CODE
+  // END STEV-CODE
 }
