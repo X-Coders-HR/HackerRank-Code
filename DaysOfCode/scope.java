@@ -14,10 +14,12 @@ class Difference {
     this.elements = a;
   }
 
+  // STEV-CODE
   void computeDifference(){
      Arrays.sort(this.elements);
      maximumDifference = this.elements[this.elements.length-1] - this.elements[0];
   }
+  // END STEV-CODE
 
 
 } // End of Difference class
