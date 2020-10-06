@@ -23,7 +23,7 @@ function readLine() {
 }
 
 function order(emailList) {
-  const list = (emailList.split('\n')).slice(0, (emailList.split('\n')).length-1).sort();
+  const list = (emailList.split('\n')).slice(0, (emailList.split('\n')).length - 1).sort();
 
   list.map((val) => {
     const [name, email] = val.split(',');
