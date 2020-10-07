@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-plusplus */
 process.stdin.resume();
@@ -23,16 +24,12 @@ function readLine() {
 }
 
 function order(emailList) {
-  const list = (emailList.split('\n')).slice(0, (emailList.split('\n')).length-1).sort();
+  const list = (emailList.split('\n')).slice(0, (emailList.split('\n')).length - 1).sort();
+  const filter = list.filter((val) => (val.match(/[a-z][^\s][a-z]@gmail.com/g) ? val : ''));
 
-  list.map((val) => {
+  filter.forEach((val) => {
     const [name, email] = val.split(',');
-
-    if (name.search(/[a-z]/g) !== -1 && name.length <= 20) {
-      if (email.search(/[a-z]@gmail.com/g) !== -1 && email.length <= 50) {
-        process.stdout.write(`${name}\n`);
-      }
-    }
+    name.length <= 20 && email.length <= 50 ? process.stdout.write(`${name}\n`) : false;
   });
 }
 
